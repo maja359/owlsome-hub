@@ -194,6 +194,17 @@ li{margin-bottom:6px}
 .gal.wide img{aspect-ratio:3/2}
 .gal.wide.two{grid-template-columns:repeat(2,1fr)}
 @media (max-width:560px){.gal.wide,.gal.three{grid-template-columns:1fr 1fr}}
+.slide{display:block;border:1px solid var(--rule);background:#fff}
+.slide img{width:100%;height:auto;display:block}
+.icons{display:grid;grid-template-columns:repeat(8,1fr);gap:10px}
+@media (max-width:900px){.icons{grid-template-columns:repeat(4,1fr)}}
+.ico{border:1px solid var(--rule);display:flex;flex-direction:column}
+.ico .pv{display:flex;align-items:center;justify-content:center;aspect-ratio:1;background:#fff}
+.ico.dark .pv{background:linear-gradient(180deg,#BE7BB2 0%,#2C0722 100%)}
+.ico .pv svg{width:46%;height:auto}
+.ico .cap{border-top:1px solid var(--rule);padding:8px 9px}
+.ico .cap .t{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px}
+.ico .cap button{font-family:var(--mono);font-size:10px;border:0;background:none;color:var(--accent);padding:0 8px 0 0;cursor:pointer;text-decoration:underline}
 .look{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px;margin-bottom:8px}
 .look>div{border-top:1px solid var(--ink);padding-top:12px}
 .look .t{font-family:var(--serif);font-weight:300;font-size:26px;line-height:1.08;margin-bottom:6px}
@@ -368,7 +379,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
   </div><a class="btn" href="https://fonts.adobe.com/fonts/ivypresto-headline" target="_blank" rel="noopener">Get</a></div>
   <div class="row"><div class="l">
     <div class="t">Söhne</div>
-    <div class="s">Grotesk by Klim Type Foundry. Desktop and web licences are sold separately. The files in the package are Klim's test version: it lacks most punctuation and is licensed for testing only.</div>
+    <div class="s">Grotesk by Klim Type Foundry. Desktop and web licences are sold separately. Wave holds a licence for Söhne Buch, and the website is set in Buch only. Kräftig needs its own licence before it goes into anything published. The files in the package Fonts folder are Klim's test version: use Wave's licensed files instead.</div>
   </div><a class="btn" href="https://klim.co.nz/retail-fonts/soehne/" target="_blank" rel="noopener">Buy</a></div>
   <div class="row"><div class="l">
     <div class="t">DM Mono</div>
@@ -378,7 +389,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
     <div class="t">Recoleta</div>
     <div class="s">Soft serif by Latinotype. Only needed if someone sets new text in it. The wordmark itself is in the logo files.</div>
   </div><a class="btn" href="https://www.latinotype.com/fonts/recoleta" target="_blank" rel="noopener">Buy</a></div>
-  <div class="flag">The fonts are built into this page so it shows the brand as it is, and the files are in the package. Wave buys its own licences: a desktop licence for design files and a web licence for the website, before the fonts go into anything published.</div>
+  <div class="flag">The fonts are built into this page so it shows the brand as it is, and the files are in the package. Every licence is held by Wave: a desktop licence for design files and a web licence for the website. Wave has bought Ivy Presto Headline Light and Söhne Buch.</div>
 </div>
 
 <!-- IMAGERY -->
@@ -386,7 +397,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
   <h2>The look</h2>
   <div class="look">
     <div><div class="t">The lab, kept minimal</div><p>Pale matte grounds, glass, brushed steel and single drops of formula. Nothing crowded.</p></div>
-    <div><div class="t">Women, in treatment</div><p>Measuring a dose or applying it to the scalp. When her face is in frame, she smiles.</p></div>
+    <div><div class="t">Women, at home</div><p>Mid-routine: at the bathroom mirror, measuring a dose or applying it at the parting. When her face is in frame, she smiles.</p></div>
     <div><div class="t">Soft daylight</div><p>Real skin and real hair, lit by a window. No hard flash, no glossy retouching.</p></div>
     <div><div class="t">The pack is the colour</div><p>Everything else stays pale and quiet. Mulberry is the only saturated colour in the frame.</p></div>
   </div>
@@ -396,14 +407,55 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
   <div class="gal" id="gal-product"></div>
   <h2>Women</h2>
   <div class="gal" id="gal-people"></div>
+  <h2>The routine</h2>
+  <p class="hint">The dropper at the parting, the bathroom mirror, the cabinet shelf.</p>
+  <div class="gal" id="gal-routine"></div>
+  <h2>Scalp and parting</h2>
+  <p class="hint">Close-ups of thinning, shot from above in soft light, for education and the hair loss pages.</p>
+  <div class="gal" id="gal-scalp"></div>
   <h2>Lab and texture</h2>
   <div class="gal three" id="gal-lab"></div>
+  <h2>Clinic</h2>
+  <div class="gal three" id="gal-clinic"></div>
+  <h2>Wide, for the website</h2>
+  <p class="hint">16:9 frames for banners and page headers.</p>
+  <div class="gal wide two" id="gal-wide"></div>
   <h2>Never</h2>
   <ul>
-    <li>Before and after, or any image that suggests a result.</li>
-    <li>Close-ups of thinning hair as a problem shot.</li>
-    <li>Bathrooms, crowded lab benches, or a clinician examining a patient.</li>
+    <li>Generated before and after images. Before and after comes only from real Wave patients, with their written consent.</li>
+    <li>Accessories drawn larger than they are. Check the dermastamp and applicators against the real product.</li>
+    <li>Crowded lab benches, piles of props, dark or grey rooms.</li>
+    <li>Hard flash, glossy retouching, a changed pack or wrong label text.</li>
   </ul>
+</div>
+
+<!-- ELEMENTS -->
+<div class="pane" id="p-elements">
+  <h2>Iconography</h2>
+  <p>Wave icons are drawn with the same hairline as the rest of the system: a 48 px grid, a 1.5 px stroke, round ends and open shapes. They name a step, a feature or a part of the treatment, always next to a short label and never alone as decoration. Mulberry on light grounds, white on the gradient or a photograph, at 32 px and above.</p>
+  <div class="mini" id="icoink"><button data-ink="m" class="on">Mulberry</button><button data-ink="w">White</button></div>
+  <div class="icons" id="icons"></div>
+  <p class="hint" style="margin-top:14px">SVG for the website and design files, PNG at 512 px for Canva and slides.</p>
+
+  <h2>Small elements</h2>
+  <p class="hint">Pills, lines, arrows and index numbers. At most two kinds on one layout. Click a page to save it.</p>
+  <a class="slide" href="el/small.jpg" data-img="el/small.jpg" data-name="wave-small-elements.jpg"><img src="el/small.jpg" alt="Wave small elements: pills, lines, arrows and index numbers" loading="lazy"></a>
+
+  <h2>Under glass</h2>
+  <p class="hint">The frosted panel that carries facts over an image. One per layout.</p>
+  <a class="slide" href="el/glass.jpg" data-img="el/glass.jpg" data-name="wave-under-glass.jpg"><img src="el/glass.jpg" alt="Wave under glass panels" loading="lazy"></a>
+
+  <h2>Lines of evidence</h2>
+  <p class="hint">Hairlines that trace, outline and build every chart. One weight per layout.</p>
+  <a class="slide" href="el/lines.jpg" data-img="el/lines.jpg" data-name="wave-lines-of-evidence.jpg"><img src="el/lines.jpg" alt="Wave lines of evidence" loading="lazy"></a>
+
+  <h2>Data and charts</h2>
+  <p class="hint">A ring for one share, a stacked bar for a whole, a dot chart to compare, a large figure when one number is the point.</p>
+  <a class="slide" href="el/charts.jpg" data-img="el/charts.jpg" data-name="wave-data-and-charts.jpg"><img src="el/charts.jpg" alt="Wave data and charts" loading="lazy"></a>
+
+  <h2>Numbers and sources</h2>
+  <p class="hint">Every figure Wave shows carries its source.</p>
+  <a class="slide" href="el/sources.jpg" data-img="el/sources.jpg" data-name="wave-numbers-and-sources.jpg"><img src="el/sources.jpg" alt="Wave numbers and sources" loading="lazy"></a>
 </div>
 
 <!-- FILES -->
@@ -500,7 +552,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
 </main>
 
 <footer><div class="wrap"><div class="meta">
-  Updated 07.10.2026<br>
+  Updated 16.11.2026<br>
   Designed and built by <a href="https://weareowlsome.com" target="_blank" rel="noopener">Owlsome Studio</a>
 </div></div></footer>
 
@@ -528,10 +580,33 @@ const REF={
  models:[["model-01","Face 1"],["model-02","Face 2"],["model-03","Face 3"],["model-04","Face 4"],["model-05","Face 5"],["model-06","Face 6"]]
 };
 const GAL={
- product:["p-49","p-60","p-50","p-54","p-59","p-51","p-57","p-61"],
- people:["w-46","w-42","w-43","w-70","w-74","w-77","people-06","people-05"],
- lab:["lab-01","lab-02","lab-04","lab-05","lab-07","lab-08","lab-09","lab-10","lab-11"]
+ product:["v-31","p-49","v-08","p-60","v-54","p-50","v-02","p-54","p-59","p-51","p-57","p-61"],
+ people:["v-03","v-34","v-05","v-14","v-25","v-60","v-16","v-32","v-58","v-10","v-18","v-59"],
+ routine:["v-07","v-36","v-22","v-45","v-37","v-42","v-41","v-26","v-38","v-43","v-44","v-52"],
+ scalp:["v-47","v-49","v-48","v-51"],
+ lab:["v-53","v-55","v-56","lab-01","lab-02","lab-04","lab-05","lab-07","lab-08","lab-09","lab-10","lab-11"],
+ clinic:["clinic-01","clinic-02","clinic-03"],
+ wide:["wide-01","wide-02","wide-03","wide-04","wide-05","wide-06","wide-07","wide-08"]
 };
+const ICONS=[
+ ["consultation",'<path d="M20 22H76C78.12 22 80.16 22.84 81.66 24.34C83.16 25.84 84 27.88 84 30V60C84 62.12 83.16 64.16 81.66 65.66C80.16 67.16 78.12 68 76 68H44L28 80V68H20C17.88 68 15.84 67.16 14.34 65.66C12.84 64.16 12 62.12 12 60V30C12 27.88 12.84 25.84 14.34 24.34C15.84 22.84 17.88 22 20 22Z"/><path d="M28 40H68M28 52H52"/>'],
+ ["clinician",'<path d="M24 14H32M56 14H64"/><path d="M28 14V34C28 38.24 29.69 42.31 32.69 45.31C35.69 48.31 39.76 50 44 50C48.24 50 52.31 48.31 55.31 45.31C58.31 42.31 60 38.24 60 34V14"/><path d="M44 50V64C44 68.24 45.69 72.31 48.69 75.31C51.69 78.31 55.76 80 60 80C64.24 80 68.31 78.31 71.31 75.31C74.31 72.31 76 68.24 76 64V58"/><path d="M76 58C80.42 58 84 54.42 84 50C84 45.58 80.42 42 76 42C71.58 42 68 45.58 68 50C68 54.42 71.58 58 76 58Z"/>'],
+ ["prescription",'<path d="M24 12H58L74 28V84H24V12Z"/><path d="M58 12V28H74"/><path d="M36 44H62M36 56H62M36 68H52"/>'],
+ ["dropper",'<path d="M38 30V20C38 17.35 39.05 14.8 40.93 12.93C42.8 11.05 45.35 10 48 10C50.65 10 53.2 11.05 55.07 12.93C56.95 14.8 58 17.35 58 20V30"/><path d="M32 30H64V40H32V30Z"/><path d="M42 40V70L48 80L54 70V40"/><path d="M48 89V90"/>'],
+ ["treatment",'<path d="M42 8H54V20H42V8Z"/><path d="M36 20H60V30H36V20Z"/><path d="M62 30H34C29.58 30 26 33.58 26 38V80C26 84.42 29.58 88 34 88H62C66.42 88 70 84.42 70 80V38C70 33.58 66.42 30 62 30Z"/><path d="M36 54H60M36 64H52"/>'],
+ ["follicle",'<path d="M10 40H86"/><path d="M48 8V52"/><path d="M48 84C55.18 84 61 76.84 61 68C61 59.16 55.18 52 48 52C40.82 52 35 59.16 35 68C35 76.84 40.82 84 48 84Z"/><path d="M41 84C41 82.14 41.74 80.36 43.05 79.05C44.36 77.74 46.14 77 48 77C49.86 77 51.64 77.74 52.95 79.05C54.26 80.36 55 82.14 55 84"/>'],
+ ["scalp",'<path d="M14 80C14 70.98 17.58 62.33 23.96 55.96C30.33 49.58 38.98 46 48 46C57.02 46 65.67 49.58 72.04 55.96C78.42 62.33 82 70.98 82 80"/><path d="M48 46V80" stroke-dasharray="5 7"/><path d="M28 24L34 34M68 24L62 34M48 16V28"/>'],
+ ["lab",'<path d="M36 12H60M40 12V38L18 76C17.47 76.91 17.2 77.95 17.2 79C17.2 80.05 17.47 81.09 18 82C18.53 82.91 19.29 83.67 20.2 84.2C21.11 84.72 22.15 85 23.2 85H72.8C73.85 85 74.89 84.72 75.8 84.2C76.71 83.67 77.47 82.91 78 82C78.53 81.09 78.8 80.05 78.8 79C78.8 77.95 78.53 76.91 78 76L56 38V12"/><path d="M28 60H68"/>'],
+ ["compounding",'<path d="M14 44H82C82 62.8 66.8 78 48 78C29.2 78 14 62.8 14 44Z"/><path d="M34 86H62"/><path d="M54 36L76 12"/>'],
+ ["delivery",'<path d="M14 30L48 14L82 30V66L48 82L14 66V30Z"/><path d="M14 30L48 46M48 46L82 30M48 46V82"/><path d="M31 22L65 38"/>'],
+ ["monthly",'<path d="M76 20H20C16.69 20 14 22.69 14 26V76C14 79.31 16.69 82 20 82H76C79.31 82 82 79.31 82 76V26C82 22.69 79.31 20 76 20Z"/><path d="M14 36H82M32 12V28M64 12V28"/><path d="M28 52H36M44 52H52M60 52H68M28 66H36M44 66H52"/>'],
+ ["refill",'<path d="M78 42C76.8 35.85 73.76 30.21 69.28 25.82C64.81 21.43 59.11 18.51 52.93 17.42C46.76 16.34 40.41 17.15 34.71 19.76C29 22.36 24.23 26.63 21 32"/><path d="M20 17V32H35"/><path d="M18 54C19.2 60.15 22.24 65.79 26.72 70.18C31.19 74.57 36.89 77.49 43.07 78.58C49.24 79.66 55.59 78.85 61.29 76.24C67 73.64 71.77 69.37 75 64"/><path d="M76 79V64H61"/>'],
+ ["privacy",'<path d="M48 10L78 22V44C78 64 66 78 48 86C30 78 18 64 18 44V22L48 10Z"/><path d="M36 48L45 57L62 40"/>'],
+ ["scalp photos",'<path d="M78 28H18C14.69 28 12 30.69 12 34V74C12 77.31 14.69 80 18 80H78C81.31 80 84 77.31 84 74V34C84 30.69 81.31 28 78 28Z"/><path d="M34 28L40 16H56L62 28"/><path d="M48 68C55.73 68 62 61.73 62 54C62 46.27 55.73 40 48 40C40.27 40 34 46.27 34 54C34 61.73 40.27 68 48 68Z"/>'],
+ ["personalised",'<path d="M14 28H26M38 28H82M14 48H56M68 48H82M14 68H36M48 68H82"/><path d="M32 34C35.31 34 38 31.31 38 28C38 24.69 35.31 22 32 22C28.69 22 26 24.69 26 28C26 31.31 28.69 34 32 34Z"/><path d="M62 54C65.31 54 68 51.31 68 48C68 44.69 65.31 42 62 42C58.69 42 56 44.69 56 48C56 51.31 58.69 54 62 54Z"/><path d="M42 74C45.31 74 48 71.31 48 68C48 64.69 45.31 62 42 62C38.69 62 36 64.69 36 68C36 71.31 38.69 74 42 74Z"/>'],
+ ["daily",'<path d="M48 82C66.78 82 82 66.78 82 48C82 29.22 66.78 14 48 14C29.22 14 14 29.22 14 48C14 66.78 29.22 82 48 82Z"/><path d="M48 28V48L62 56"/>']
+];
+function iconSvg(body,c,size){return `<svg xmlns="http://www.w3.org/2000/svg" width="${size||96}" height="${size||96}" viewBox="0 0 96 96" fill="none"><g stroke="${c}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">${body}</g></svg>`;}
 const LOCK="Keep every product exactly as in the attached reference: shape, colour, material and the Wave wordmark. Do not add any product that is not attached. Preserve all label text EXACTLY. Do not add any text, logo or graphic to the image.";
 const FACE="The FIRST attached image shows the woman, keep her identity, face, skin tone and hair exactly the same. The SECOND attached image shows the product, reproduce it identically.";
 const PROD="The attached image shows the product, reproduce it identically.";
@@ -569,7 +644,7 @@ const DRIVE={
  fonts:"https://drive.google.com/drive/folders/1HGybPpeN1mp1vCoozkL8I2jrRgha8aIT",
  visuals:"https://drive.google.com/drive/folders/15DGvteBy3dOzs1VsC7VsNrkmQTaC2Cx1"
 };
-const BRAIN="# Wave Brand Brain\n\nThe Wave brand rules, written for an AI assistant. Paste this whole file into the Instructions of a Claude Project (or a ChatGPT custom GPT or Project).\n\nPrepared by Owlsome Studio \u00b7 weareowlsome.com \u00b7 version 1.0 \u00b7 October 2026\n\n---\n\n## 1. Who Wave is\n\nWave is a UK dermatology service for women with hair loss. A registered dermatology clinician reviews each patient and writes a topical prescription that combines several established actives. A GPhC-registered pharmacy compounds it for her alone. Treatment starts with an online consultation and continues with a clinician she can reach.\n\nMission: to make specialist dermatology for women's hair loss personal, accessible and properly explained.\n\nPersonality: credible, precise, human. Picture a consultant dermatologist in her late forties who still answers her own emails: warm in private, exact in public, and never promising more than she can prescribe.\n\nArchetypes: the Sage (evidence, explanation) and the Caregiver (privacy, support).\n\nWho we speak to: women aged roughly 35 to 60 who have already tried supplements, serums and over-the-counter minoxidil, were told \"it's probably stress\", and want a proper diagnosis and someone to talk to.\n\n## 2. Voice\n\nFive rules:\n1. Evidence first. Every statement can be traced to a study, a prescription or a clinician.\n2. Plain about the science. Explain the biology in the words a patient uses, then give the detail a well-read woman came for.\n3. Discreet by default. Talk about hair loss calmly, privately and without drama.\n4. Human on the record. A named person sits behind every formula; the writing sounds like that person speaking.\n5. Quietly confident. Describe what treatment involves and how long it takes. Leave promises to others.\n\nSentence patterns that sound like Wave:\n- \"A UK dermatology clinician reviews your consultation and decides which actives you need, and how strong.\"\n- \"Hair loss treatment written for one woman. You.\"\n\nNever:\n- Promise or imply results: no \"regrowth\", \"thicker\", \"fuller\", \"visible results\", timelines of effect, percentages or before/after.\n- Name or quote a clinician, pharmacist or reviewer unless the Wave team has confirmed it in writing.\n- Use fear, shame or urgency (\"don't wait\", \"before it's too late\").\n- Use beauty-brand gush, exclamation marks, emoji in clinical copy, or wellness clich\u00e9s (\"journey\", \"glow\", \"self-care ritual\").\n- Use the \"not X, but Y\" construction, em dashes or en dashes.\n- Write a prescription-only medicine name as a selling point in advertising. UK rules restrict advertising prescription medicines to the public. Any claim, drug name or medical statement goes to the Wave team for approval before it is published.\n\n## 3. Identity\n\nLogo: the Wave wordmark, set in Recoleta with a capital W. There is no symbol. Always use the logo files, never retype it.\n- Mulberry on white, Mist or Beige. White on Velvet, Mulberry, Wisteria or the violet gradient. Black or white only where colour is unavailable.\n- Clear space: the height of the letter W on every side.\n- Never rotate, stretch, outline, add shadow or 3D, change the font, or place it on a colour outside the palette or a busy photo.\n\nColour (HEX \u00b7 RGB \u00b7 CMYK \u00b7 Pantone):\n- Velvet #3F2434 \u00b7 63 36 52 \u00b7 65 81 47 62 \u00b7 6322 C. Darkest value: depth and type.\n- Mulberry #6B3761 \u00b7 107 55 97 \u00b7 61 84 31 23 \u00b7 7658 C. Signature: the bottle and the wordmark.\n- Wisteria #C6A8C4 \u00b7 198 168 196 \u00b7 26 38 10 0 \u00b7 7437 C. Muted lilac that lightens the violets.\n- Beige #E5DAD8 \u00b7 229 218 216 \u00b7 12 15 14 0 \u00b7 4085 C at 50%. Pale clinical ground.\n- Mist #F1EDEC \u00b7 241 237 236 \u00b7 7 7 7 0 \u00b7 663 C at 50%. Pale clinical ground.\nMist and Beige carry most surfaces. Mulberry and Velvet are for the wordmark, type and the bottle. Cartons and key visuals run the violet gradient: soft violet #BE7BB2 at the top into deep aubergine #2C0722 at the base, as printed on every carton, with fine grain. White type on Velvet, Mulberry and the gradient; Mulberry or Velvet type on Mist and Beige. No blue, green, yellow or amber anywhere.\n\nTypography:\n- Ivy Presto Headline Light: large headlines and single-word statements.\n- S\u00f6hne Buch and Kr\u00e4ftig: navigation, subheads and body copy.\n- DM Mono Medium: labels, data, small uppercase headlines, buttons and the prescription block.\n- Recoleta Medium: the wordmark only.\n- All text runs horizontally. Never vertical or rotated type.\nLicences: Ivy Presto via Adobe Fonts or The Ivy Foundry, S\u00f6hne from Klim Type Foundry, Recoleta from Latinotype, DM Mono free (Google Fonts). Wave buys its own desktop and web licences.\n\nKey visual devices:\n- Under glass: the prescription block from the pack becomes a frosted-glass panel over a photograph.\n- Lines of evidence: one hairline weight, solid or dashed. It traces, outlines, circles or connects; a line that needs a name carries a short DM Mono label.\n\n## 4. Image world\n\nTwo places only:\n- The lab where each formula is made: minimal, pale matte grounds, glass, brushed steel, single drops of formula.\n- The women who use it, in the moments of treatment: measuring a dose, applying it to the scalp. When her face is in frame she is smiling, gently.\nSoft daylight. The packaging is the only saturated colour in the frame. Real skin and real hair texture.\n\nNever: before/after, close-ups of thinning or bald patches as \"problem\" shots, images that suggest an effect, crowded lab benches, a clinician examining a patient, bathrooms, text or logos generated into the image.\n\nAI images: Claude does not make images. Images are made in Gemini (free) or in ChatGPT (a paid plan for regular use) from the reference files in the Wave Brand Hub, where the step-by-step guide for both lives. Text never goes into the image; it is added in Canva.\nPrompt skeleton: \"The FIRST attached image shows the woman, keep her identity exactly. The SECOND attached image shows the product, reproduce it identically. [Scene, light, framing.] Make the image in a [4:5 vertical / 1:1 square / 3:2 horizontal / 9:16 vertical] format.\"\nEvery image prompt ends with this line, unchanged:\n\"Keep every product exactly as in the attached reference: shape, colour, material and the Wave wordmark. Do not add any product that is not attached. Preserve all label text EXACTLY. Do not add any text, logo or graphic to the image.\"\nNever publish a frame with wrong label text or a changed pack. Headlines and claims are added afterwards in Canva. The full prompt bank lives in the Brand Hub.\n\n## 5. How to answer as Wave\n\n- Write every piece of copy in the Wave voice above, in British English.\n- If a request breaks a rule (a result claim, a colour outside the palette, a vertical headline, a before/after image), say which rule it breaks in one sentence, then offer the closest on-brand version.\n- If a request needs medical or regulatory judgement, write the draft and mark it \"For clinical and regulatory review before publishing\".\n- When unsure about a fact (a price, a clinician, a formulation), ask instead of inventing it.\n- Keep answers short and usable: the copy first, any note after.\n";
+const BRAIN="# Wave Brand Brain\n\nThe Wave brand rules, written for an AI assistant. Paste this whole file into the Instructions of a Claude Project (or a ChatGPT custom GPT or Project).\n\nPrepared by Owlsome Studio \u00b7 weareowlsome.com \u00b7 version 1.1 \u00b7 November 2026\n\n---\n\n## 1. Who Wave is\n\nWave is a UK dermatology service for women with hair loss. A registered dermatology clinician reviews each patient and writes a topical prescription that combines several established actives. A GPhC-registered pharmacy compounds it for her alone. Treatment starts with an online consultation and continues with a clinician she can reach.\n\nMission: to make specialist dermatology for women's hair loss personal, accessible and properly explained.\n\nPersonality: credible, precise, human. Picture a consultant dermatologist in her late forties who still answers her own emails: warm in private, exact in public, and never promising more than she can prescribe.\n\nArchetypes: the Sage (evidence, explanation) and the Caregiver (privacy, support).\n\nWho we speak to: women aged roughly 35 to 60 who have already tried supplements, serums and over-the-counter minoxidil, were told \"it's probably stress\", and want a proper diagnosis and someone to talk to.\n\n## 2. Voice\n\nFive rules:\n1. Evidence first. Every statement can be traced to a study, a prescription or a clinician.\n2. Plain about the science. Explain the biology in the words a patient uses, then give the detail a well-read woman came for.\n3. Discreet by default. Talk about hair loss calmly, privately and without drama.\n4. Human on the record. A named person sits behind every formula; the writing sounds like that person speaking.\n5. Quietly confident. Describe what treatment involves and how long it takes. Leave promises to others.\n\nSentence patterns that sound like Wave:\n- \"A UK dermatology clinician reviews your consultation and decides which actives you need, and how strong.\"\n- \"Hair loss treatment written for one woman. You.\"\n\nNever:\n- Promise or imply results: no \"regrowth\", \"thicker\", \"fuller\", \"visible results\" or timelines of effect. A figure appears only with its source (see Numbers and sources).\n- Name or quote a clinician, pharmacist or reviewer unless the Wave team has confirmed it in writing.\n- Use fear, shame or urgency (\"don't wait\", \"before it's too late\").\n- Use beauty-brand gush, exclamation marks, emoji in clinical copy, or wellness clich\u00e9s (\"journey\", \"glow\", \"self-care ritual\").\n- Use the \"not X, but Y\" construction, em dashes or en dashes.\n- Write a prescription-only medicine name as a selling point in advertising. UK rules restrict advertising prescription medicines to the public. Any claim, drug name or medical statement goes to the Wave team for approval before it is published.\n\n## 3. Identity\n\nLogo: the Wave wordmark, set in Recoleta with a capital W. There is no symbol. Always use the logo files, never retype it.\n- Mulberry on white, Mist or Beige. White on Velvet, Mulberry, Wisteria or the violet gradient. Black or white only where colour is unavailable.\n- Clear space: the height of the letter W on every side.\n- Never rotate, stretch, outline, add shadow or 3D, change the font, or place it on a colour outside the palette or a busy photo.\n\nColour (HEX \u00b7 RGB \u00b7 CMYK \u00b7 Pantone):\n- Velvet #3F2434 \u00b7 63 36 52 \u00b7 65 81 47 62 \u00b7 6322 C. Darkest value: depth and type.\n- Mulberry #6B3761 \u00b7 107 55 97 \u00b7 61 84 31 23 \u00b7 7658 C. Signature: the bottle and the wordmark.\n- Wisteria #C6A8C4 \u00b7 198 168 196 \u00b7 26 38 10 0 \u00b7 7437 C. Muted lilac that lightens the violets.\n- Beige #E5DAD8 \u00b7 229 218 216 \u00b7 12 15 14 0 \u00b7 4085 C at 50%. Pale clinical ground.\n- Mist #F1EDEC \u00b7 241 237 236 \u00b7 7 7 7 0 \u00b7 663 C at 50%. Pale clinical ground.\nMist and Beige carry most surfaces. Mulberry and Velvet are for the wordmark, type and the bottle. Cartons and key visuals run the violet gradient: soft violet #BE7BB2 at the top into deep aubergine #2C0722 at the base, as printed on every carton, with fine grain. White type on Velvet, Mulberry and the gradient; Mulberry or Velvet type on Mist and Beige. No blue, green, yellow or amber anywhere.\n\nTypography:\n- Ivy Presto Headline Light: large headlines and single-word statements.\n- S\u00f6hne Buch: navigation and body copy. S\u00f6hne Kr\u00e4ftig: subheads in print and design files. The website uses Buch only.\n- DM Mono Medium: labels, data, small uppercase headlines, buttons and the prescription block.\n- Recoleta Medium: the wordmark only.\n- All text runs horizontally. Never vertical or rotated type.\nLicences: Ivy Presto via Adobe Fonts or The Ivy Foundry, S\u00f6hne from Klim Type Foundry, Recoleta from Latinotype, DM Mono free (Google Fonts). Wave holds its own desktop and web licences: Ivy Presto Headline Light and S\u00f6hne Buch are bought, Kr\u00e4ftig needs its own licence before it is published.\n\nKey visual devices:\n- Under glass: the prescription block from the pack becomes a frosted-glass panel over a photograph.\n- Lines of evidence: one hairline weight, solid or dashed. It traces, outlines, circles or connects; a line that needs a name carries a short DM Mono label.\n- Small elements: pills (one or two words in capitals, outline by default, Wisteria fill for the one or two terms the layout is about), lines, thin straight arrows pointing down or right for a sequence, index numbers (//01 for a series, 01 for the steps of a process). At most two kinds on one layout.\n- Icons: 16 line icons on a 48 px grid, 1.5 px stroke, round ends, open shapes. Always next to a short label, never decoration. Mulberry on light grounds, white on the gradient or a photograph, 32 px and above. The files are in the Brand Hub, Elements tab.\n- Data and charts: a ring for one share of a whole, a stacked bar for what makes up a whole (up to five segments), a dot chart to compare up to six values on an axis that starts at zero, a large Ivy Presto figure when one number is the point. Colours run Velvet to Wisteria in order of weight, hairline axes, DM Mono labels. No 3D, no filled or gradient bars.\n- Numbers and sources: every figure carries its source (a published study, a recognised guideline, or Wave patient data with the year and number of patients). Reference number top right of the figure in DM Mono; the list at the foot of the page, or a source line directly under the figure on packs, product pages and posts. No rounded-up figures, no undated figures, no percentage without the number of people behind it.\n\n## 4. Image world\n\nTwo places only:\n- The lab where each formula is made: minimal, pale matte grounds, glass, brushed steel, single drops of formula.\n- The women who use it, at home and mid-routine: at the bathroom mirror, measuring a dose, applying the dropper at the parting, the bottle on a cabinet shelf. When her face is in frame she is smiling, gently. Women of every ethnicity and hair type, aged roughly 35 to 65.\nAlso allowed: close-ups of the scalp and parting shot from above in soft light, for education; a clinician reviewing a scalp or a dermatoscope image in a calm, pale clinic.\nSoft daylight. The packaging is the only saturated colour in the frame. Real skin and real hair texture.\n\nNever: generated before/after images (before and after comes only from real Wave patients with written consent, and goes to clinical and regulatory review), accessories drawn larger than the real product, crowded lab benches, piles of props, dark or grey rooms, hard flash, text or logos generated into the image.\n\nAI images: Claude does not make images. Images are made in Gemini (free) or in ChatGPT (a paid plan for regular use) from the reference files in the Wave Brand Hub, where the step-by-step guide for both lives. Text never goes into the image; it is added in Canva.\nPrompt skeleton: \"The FIRST attached image shows the woman, keep her identity exactly. The SECOND attached image shows the product, reproduce it identically. [Scene, light, framing.] Make the image in a [4:5 vertical / 1:1 square / 3:2 horizontal / 9:16 vertical] format.\"\nEvery image prompt ends with this line, unchanged:\n\"Keep every product exactly as in the attached reference: shape, colour, material and the Wave wordmark. Do not add any product that is not attached. Preserve all label text EXACTLY. Do not add any text, logo or graphic to the image.\"\nNever publish a frame with wrong label text or a changed pack. Headlines and claims are added afterwards in Canva. The full prompt bank lives in the Brand Hub.\n\n## 5. How to answer as Wave\n\n- Write every piece of copy in the Wave voice above, in British English.\n- If a request breaks a rule (a result claim, a colour outside the palette, a vertical headline, a generated before/after image), say which rule it breaks in one sentence, then offer the closest on-brand version.\n- If a request needs medical or regulatory judgement, write the draft and mark it \"For clinical and regulatory review before publishing\".\n- When unsure about a fact (a price, a clinician, a formulation), ask instead of inventing it.\n- Keep answers short and usable: the copy first, any note after.\n";
 
 /* util */
 const $=id=>document.getElementById(id);
@@ -602,7 +677,7 @@ async function saveUrl(url,name,btn){
 }
 
 /* tabs */
-const TABS=[["colour","Colour"],["logo","Logo"],["type","Type"],["imagery","Imagery"],["files","Files"],["ai","AI kit"]];
+const TABS=[["colour","Colour"],["logo","Logo"],["type","Type"],["imagery","Imagery"],["elements","Elements"],["files","Files"],["ai","AI kit"]];
 $("tabs").innerHTML=TABS.map(([id,l],i)=>`<button role="tab" data-t="${id}" class="${i===0?'on':''}">${l}</button>`).join("");
 document.querySelectorAll("#tabs button").forEach(b=>b.onclick=()=>{
   document.querySelectorAll("#tabs button").forEach(x=>x.classList.toggle("on",x===b));
@@ -770,6 +845,26 @@ function galTiles(list){return list.map(f=>`<a href="gal/${f}.jpg" data-img="gal
 $("gal-product").innerHTML=galTiles(GAL.product);
 $("gal-people").innerHTML=galTiles(GAL.people);
 $("gal-lab").innerHTML=galTiles(GAL.lab);
+$("gal-routine").innerHTML=galTiles(GAL.routine);
+$("gal-scalp").innerHTML=galTiles(GAL.scalp);
+$("gal-clinic").innerHTML=galTiles(GAL.clinic);
+$("gal-wide").innerHTML=galTiles(GAL.wide);
+
+/* icons */
+let icoInk="m";
+function drawIcons(){
+  const c=icoInk==="m"?"#6B3761":"#FFFFFF";
+  $("icons").innerHTML=ICONS.map(([n,b],i)=>`<div class="ico${icoInk==="w"?" dark":""}"><div class="pv">${iconSvg(b,c)}</div>
+   <div class="cap"><div class="t">${n}</div><button data-ico="${i}" data-k="svg">SVG</button><button data-ico="${i}" data-k="png">PNG</button></div></div>`).join("");
+}
+drawIcons();
+$("icoink").onclick=e=>{const b=e.target.closest("button");if(!b)return;icoInk=b.dataset.ink;
+  $("icoink").querySelectorAll("button").forEach(x=>x.classList.toggle("on",x===b));drawIcons();};
+$("icons").onclick=async e=>{const b=e.target.closest("button[data-ico]");if(!b)return;
+  const [n,body]=ICONS[+b.dataset.ico];const c=icoInk==="m"?"#6B3761":"#FFFFFF";const ink=icoInk==="m"?"mulberry":"white";
+  const base=`wave-icon-${n.replace(/ /g,"-")}-${ink}`;
+  if(b.dataset.k==="svg") saveFile(base+".svg",new Blob([iconSvg(body,c,48)],{type:"image/svg+xml"}),b);
+  else saveFile(base+".png",await svgToPng(iconSvg(body,c,512),512,512),b);};
 
 /* files */
 const TOKENS=CODES.map(c=>`/* ${c[0]} */\n${c[1]}`).join("\n\n");
@@ -778,7 +873,7 @@ $("assets").innerHTML=[
  ["Logo","The wordmark in AI, EPS, SVG and PNG, plus ready versions on every brand background.","link",DRIVE.logo],
  ["Fonts","Ivy Presto Headline, Söhne, DM Mono and Recoleta. Licences are bought separately, see Type.","link",DRIVE.fonts],
  ["Packaging","Print files for the 30 ml and 100 ml bottles, their cartons and the three accessory boxes.","link",DRIVE.packaging],
- ["Launch visuals","Every Launch Engine image at full resolution: product, women, lab and texture.","link",DRIVE.visuals],
+ ["Launch visuals","Every Launch Engine image at full resolution: product, women, the routine, scalp, lab, clinic and wide frames for the website, plus the ad-compliant set.","link",DRIVE.visuals],
  ["The whole package","Every folder above in one place.","link",DRIVE.root],
  ["Colour tokens","CSS, Tailwind, JSON and SCSS in one block.","copy","tokens"],
  ["Brand Brain","The AI instruction file, see AI kit.","copy","brain"]
