@@ -406,6 +406,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
   <p class="hint">Click an image to download it at 1600 px. Full resolution is in the Launch visuals folder under Files.</p>
   <div class="gal" id="gal-product"></div>
   <h2>Women</h2>
+  <p class="hint">Twelve women, one frame each. Their faces are in the AI kit, ready to use as references.</p>
   <div class="gal" id="gal-people"></div>
   <h2>The routine</h2>
   <p class="hint">The dropper at the parting, the bathroom mirror, the cabinet shelf.</p>
@@ -513,7 +514,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
   <p class="hint">Download these once into one folder on your desktop. Every image prompt below starts from them.</p>
   <div class="sub">The product. Never changes.</div>
   <div class="refs" id="refprod"></div>
-  <div class="sub">The faces. Rotate them.</div>
+  <div class="sub">The faces. The twelve women from Imagery. Rotate them.</div>
   <div class="refs" id="refmod"></div>
 
   <h2>How to make an image</h2>
@@ -577,12 +578,12 @@ const RANGE=[["Treatment","30 ml bottle","bottle-30ml"],["Treatment","100 ml bot
  ["Scalp dermastamp","Accessory","scalp-dermastamp"],["Daily applicator","Accessory","daily-applicator"],["Travel applicator","Accessory","travel-applicator"]];
 const REF={
  products:[["bottle-30ml","30 ml bottle"],["bottle-100ml","100 ml bottle"],["carton-30ml","30 ml carton"],["carton-100ml","100 ml carton"],["scalp-dermastamp","Scalp dermastamp"],["daily-applicator","Daily applicator"],["travel-applicator","Travel applicator"]],
- models:[["model-01","Face 1"],["model-02","Face 2"],["model-03","Face 3"],["model-04","Face 4"],["model-05","Face 5"],["model-06","Face 6"]]
+ models:[["face-01","Face 1"],["face-02","Face 2"],["face-03","Face 3"],["face-04","Face 4"],["face-05","Face 5"],["face-06","Face 6"],["face-07","Face 7"],["face-08","Face 8"],["face-09","Face 9"],["face-10","Face 10"],["face-11","Face 11"],["face-12","Face 12"]]
 };
 const GAL={
  product:["v-31","p-49","v-08","p-60","v-54","p-50","v-02","p-54","p-59","p-51","p-57","p-61"],
- people:["v-03","v-34","v-05","v-14","v-25","v-60","v-16","v-32","v-58","v-10","v-18","v-59"],
- routine:["v-07","v-36","v-22","v-45","v-37","v-42","v-41","v-26","v-38","v-43","v-44","v-52"],
+ people:["v-03","v-34","v-58","v-16","v-24","v-19","v-28","v-60","v-21","v-17","v-39","v-37"],
+ routine:["v-07","v-36","v-22","v-45","v-61","v-42","v-41","v-26","v-38","v-43","v-44","v-52"],
  scalp:["v-47","v-49","v-48","v-51"],
  lab:["v-53","v-55","v-56","lab-01","lab-02","lab-04","lab-05","lab-07","lab-08","lab-09","lab-10","lab-11"],
  clinic:["clinic-01","clinic-02","clinic-03"],
@@ -611,13 +612,13 @@ const LOCK="Keep every product exactly as in the attached reference: shape, colo
 const FACE="The FIRST attached image shows the woman, keep her identity, face, skin tone and hair exactly the same. The SECOND attached image shows the product, reproduce it identically.";
 const PROD="The attached image shows the product, reproduce it identically.";
 const PROMPTS=[
- ["Measuring a dose by the window","model-0X + bottle-30ml","4:5",
+ ["Measuring a dose by the window","face-XX + bottle-30ml","4:5",
   `A woman sits by a large window in soft morning daylight, holding the dropper up at eye level and checking the dose against the light, the bottle in her other hand. ${FACE} She wears a pale knit, a gentle smile, calm and unhurried. Pale matte wall behind, real skin and hair texture. Make the image in a 4:5 vertical format.`],
- ["Applying to the parting","model-0X + bottle-30ml","4:5",
+ ["Applying to the parting","face-XX + bottle-30ml","4:5",
   `Close portrait from slightly above, the woman parts her hair with one hand and with the other applies a single drop from the glass dropper to the parting. The open bottle stands on a pale surface at the bottom edge of the frame. ${FACE} Soft side daylight, pale background, a gentle smile, relaxed and private. Make the image in a 4:5 vertical format.`],
- ["Smiling, bottle in hand","model-0X + bottle-100ml","9:16",
+ ["Smiling, bottle in hand","face-XX + bottle-100ml","9:16",
   `Waist-up portrait against a pale warm grey wall, the woman holds the bottle loosely at chest height with the label to camera and smiles gently at the lens. ${FACE} Soft window light from the left, simple pale top, natural hair. Make the image in a 9:16 vertical format.`],
- ["Daily applicator in use","model-0X + daily-applicator","4:5",
+ ["Daily applicator in use","face-XX + daily-applicator","4:5",
   `Close shot of the top of a woman's head, her hand pressing the daily applicator gently onto the parting, fingers relaxed. ${FACE} Soft daylight, pale background, the applicator sharp and fully visible, the face only partly in frame. Make the image in a 4:5 vertical format.`],
  ["Dropper over the bottle, macro","bottle-30ml","4:5",
   `Extreme close-up of the glass dropper held just above the open bottle, one clear drop forming at the tip, the bottle shoulder and wordmark soft below. ${PROD} Pale matte background, soft daylight. Make the image in a 4:5 vertical format.`],
