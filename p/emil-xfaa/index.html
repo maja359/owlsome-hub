@@ -108,7 +108,8 @@ blockquote p{font-family:"Times Now","Times New Roman",serif;font-weight:200;fon
 .next{gap:24px}
 .next h1{max-width:36rem}
 .next .steps{margin:40px 0 32px}
-.maja{margin-top:96px;gap:10px}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:96px;align-items:start}
+.maja{gap:10px}
 .maja img{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center 18%;margin-bottom:10px}
 .maja p{font-size:14px;line-height:19.6px;max-width:22rem}
 .more{margin-top:56px;text-decoration:none;border-bottom:1px solid var(--ink);padding-bottom:4px}
@@ -120,6 +121,7 @@ footer a.caps{text-decoration:none;display:inline-block;margin-left:28px}
 footer .copy{font-size:10px;line-height:14px;margin-top:40px;border-top:1px solid #ffffffb3;padding-top:20px;width:100%}
 
 @media(max-width:900px){
+.team{grid-template-columns:1fr;gap:56px}
 h1{font-size:44px;line-height:39px;letter-spacing:-1.8px}
 h2{font-size:38px;line-height:34px;letter-spacing:-1.5px}
 h3{font-size:30px;line-height:27px;letter-spacing:-1.2px}
@@ -225,11 +227,14 @@ footer a.caps{margin:0 24px 0 0}
 <h1>Zaczynamy?</h1>
 <div class="steps"><div class='step'><div class='caps'>01</div><h3>Dajesz znać</h3><p>Odpisz na maila albo kliknij przycisk niżej, a zarezerwujemy dla ciebie termin startu.</p></div><div class='step'><div class='caps'>02</div><h3>Podpisujesz umowę</h3><p>Umowa przychodzi do podpisu online. <a href='https://docs.google.com/document/d/1yTLuz7MMBNXi5otb-x8cM6nFwKfwNSsdmljnXpNvCtk/edit?usp=sharing' target='_blank' rel='noopener'>Możesz ją przeczytać już teraz</a>.</p></div><div class='step'><div class='caps'>03</div><h3>Startujemy</h3><p>Po wpłacie zaliczki dostajesz brief i spotykamy się na krótkie warsztaty. Pierwsza prezentacja jest dwa, trzy tygodnie później.</p></div></div>
 <a class="btn" href="mailto:maja@weareowlsome.com?subject=Termin%20startu%20dla%20twojej%20marki" data-goatcounter-click="cta-emil-xfaa">Zarezerwuj termin</a>
+<div class="team">
 <div class="maja center">
 <img src="../_a/maja.jpg" alt="Maja Regula">
 <h3>Maja Regula</h3>
 <span class="caps">Prowadzi studio</span>
 <p>Pytania wysyłaj bezpośrednio na <a href="mailto:maja@weareowlsome.com">maja@weareowlsome.com</a>.</p>
+</div>
+<div class='maja center'><img src='../_a/polina.jpg' alt='Polina Andreicheva'><h3>Polina Andreicheva</h3><span class='caps'>Branding i opakowania</span><p>Projektuje identyfikację i opakowania, od pierwszego konceptu po pliki do druku.</p></div><div class='maja center'><img src='../_a/olena.jpg' alt='Olena Doshak'><h3>Olena Doshak</h3><span class='caps'>Marka i content</span><p>Przenosi markę na wszystko, z czym startujesz, od social mediów po kadry kampanijne, żeby wszędzie wyglądała spójnie.</p></div>
 </div>
 <a class="caps more" href="https://weareowlsome.com" target="_blank" rel="noopener">Zobacz studio na weareowlsome.com</a>
 </div></section>
