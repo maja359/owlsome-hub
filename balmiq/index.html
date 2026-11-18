@@ -39,7 +39,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-off
 .hero-l svg{width:min(300px,100%);height:auto;display:block;margin:0 auto}
 .hero-l .tag{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.7);margin-top:18px}
 .hero-r{position:relative;min-height:480px;overflow:hidden}
-.hero-r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 78%}
+.hero-r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 30%}
 @media (max-width:760px){.hero{grid-template-columns:1fr}.hero-r{min-height:340px}}
 
 .tabbar{position:sticky;top:0;z-index:40;background:var(--vapour);border-bottom:1px solid var(--rule2)}
@@ -240,7 +240,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
   <div class="hero-l">
     <div><div id="herologo" aria-label="Balmiq"></div><div class="tag">Brand hub</div></div>
   </div>
-  <div class="hero-r"><img src="gal/product-2.jpg" alt="The three Balmiq sticks in a row on an oxblood ground"></div>
+  <div class="hero-r"><img src="gal/w09-web-hero.jpg" alt="A woman holding the closed First Light stick at her cheek"></div>
 </header>
 <nav class="tabbar"><div class="wrap"><div class="tabs" id="tabs" role="tablist"></div></div></nav>
 
@@ -375,7 +375,7 @@ footer a{color:inherit;text-decoration:none;border-bottom:1px solid var(--rule2)
   <h2>Product</h2>
   <div class="gal" id="gal-product"></div>
   <h2>Women</h2>
-  <p class="hint">One frame with the stick and eleven portraits. Their faces are in the AI kit, ready to use as references.</p>
+  <p class="hint">The first frames are campaign visuals. The portraits are the faces used in the AI kit, ready to use as references.</p>
   <p class="hint">The women are AI stand-ins for now. After the photo shoot the faces are replaced with the women from the shoot, and the prompts stay the same.</p>
   <div class="gal" id="gal-people"></div>
   <h2>Textures</h2>
@@ -516,8 +516,8 @@ const REF={
 };
 const GAL={
  packshots:["packshot-1","packshot-2","packshot-3","packshot-4","packshot-5","packshot-6"],
- product:["product-2","product-3","product-1"],
- people:["model-product-1","model-01","model-02","model-03","model-04","model-05","model-06","model-07","model-08","model-09","model-10","model-11"],
+ product:["product-2","product-1","s03-sink","s01-pouch","s02-mirror","s04-locker","s05-red-block","product-3"],
+ people:["w09-web-hero","w01-laugh-safe-keeping","w05-turtleneck","w07-wet-hair","w04-freckles-safe-keeping","w02-turtleneck-close-safe-keeping","w03-applying-first-light","w06-towel-robe","w10-towel-shoulder","w08-blonde-holding","model-product-1","model-01","model-02","model-03","model-04","model-05","model-06","model-07","model-08","model-09","model-10","model-11"],
  brand:["brand-visuals-1","brand-visuals-2","brand-visuals-3","brand-visuals-4","brand-visuals-5"],
  textures:["product-texture-1","product-texture-2","product-texture-3","product-texture-4","product-texture-5","product-texture-6","product-texture-7","product-texture-8","product-texture-9","product-texture-10","product-texture-11"]
 };
@@ -531,6 +531,21 @@ const GALALT={
  "product-2":"The three sticks in a row on an oxblood ground",
  "product-3":"Hands placing the Safe Keeping stick into an oxblood leather bag",
  "brand-visuals-1":"The balmiq wordmark embossed tone on tone",
+ "w01-laugh-safe-keeping":"A woman laughing with her eyes closed, holding the open Safe Keeping stick at her cheek",
+ "w02-turtleneck-close-safe-keeping":"A woman in an oxblood turtleneck holding the open Safe Keeping stick at her jaw",
+ "w03-applying-first-light":"A woman applying the open First Light stick to her cheek",
+ "w04-freckles-safe-keeping":"Close-up of a freckled face with the open Safe Keeping stick at the cheek",
+ "w05-turtleneck":"A woman in an oxblood turtleneck holding the open Soft Water stick at her cheek",
+ "w06-towel-robe":"A woman in a towel turban and an oxblood robe applying the open First Light stick",
+ "w07-wet-hair":"A woman with wet hair holding the open Soft Water stick at her cheek",
+ "w08-blonde-holding":"A woman in a white top holding the closed Safe Keeping stick under her chin",
+ "w09-web-hero":"A woman holding the closed First Light stick at her cheek",
+ "w10-towel-shoulder":"A woman in a towel turban holding the open Soft Water stick",
+ "s01-pouch":"An oxblood leather pouch with the balmiq wordmark and two sticks standing in it, on a white tiled counter",
+ "s02-mirror":"A woman applying the First Light stick at a round mirror in an oxblood bathroom",
+ "s03-sink":"Three sticks on an oxblood sink",
+ "s04-locker":"The Safe Keeping stick in a gym locker next to a water bottle and a towel",
+ "s05-red-block":"The Safe Keeping stick standing on a red block",
  "product-1":"The three sticks stacked on their sides on an oxblood ground, monogram on the cap tops",
  "brand-visuals-2":"Business cards in oxblood and pale pink with the balmiq wordmark embossed, in a window shadow",
  "brand-visuals-3":"A hand holding an oxblood card with the embossed monogram against a pale pink wall",
@@ -801,7 +816,8 @@ async function readyFile(k){
 }
 
 /* imagery */
-function galTiles(list){return list.map(f=>`<a href="gal/${f}.jpg" data-img="gal/${f}.jpg" data-name="balmiq-${f}.jpg"><img src="gal/${f}-t.jpg" alt="${GALALT[f]||"Balmiq visual"}" loading="lazy"><span>Download</span></a>`).join("");}
+const GALPOS={"s05-red-block":"72% 50%"};
+function galTiles(list){return list.map(f=>`<a href="gal/${f}.jpg" data-img="gal/${f}.jpg" data-name="balmiq-${f}.jpg"><img${GALPOS[f]?` style="object-position:${GALPOS[f]}"`:""} src="gal/${f}-t.jpg" alt="${GALALT[f]||"Balmiq visual"}" loading="lazy"><span>Download</span></a>`).join("");}
 $("gal-packshots").innerHTML=galTiles(GAL.packshots);
 $("gal-product").innerHTML=galTiles(GAL.product);
 $("gal-people").innerHTML=galTiles(GAL.people);
