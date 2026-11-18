@@ -74,7 +74,8 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 function prog(){return '<div class="prog">'+STEPS.map((_,k)=>'<i class="'+(k<=st.i?'on':'')+'"></i>').join('')+'</div>'}
 function intro(){
   app.innerHTML='<div class="kicker">Park Aesthetics</div><h1>Which logo feels most like Park?</h1>'+
-  '<p class="lead">There are '+STEPS.length+' short questions. Each one changes a single thing about the logo. Tap the version you like most. If none of them feels right, choose "None of these". Your answers come straight to us when you press Send at the end.</p>';
+  '<p class="lead">There are '+STEPS.length+' short questions. Each one changes a single thing about the logo. Tap the version you like most. If none of them feels right, choose "None of these". Your answers come straight to us when you press Send at the end.</p>'+
+  '<p class="lead">This is a quick sorting exercise we put together to narrow things down, so some versions will look rough on purpose. The final wordmark, with its own original detail, will be designed in the next round based on your picks.</p>';
   bar.innerHTML='<span class="hint">About 5 minutes</span><button class="btn" id="go">Start</button>';
   document.getElementById('go').onclick=()=>{st.i=0;save();render()};
 }
